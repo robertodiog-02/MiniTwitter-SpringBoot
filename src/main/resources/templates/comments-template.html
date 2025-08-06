@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments xmlns:th="http://www.thymeleaf.org">
+  <comment th:each="comment : ${comments}" th:attr="id=${comment.id}">
+    <author th:text="${comment.authorFullName}"></author>
+    <username th:text="${comment.authorUsername}"></username>
+    <text th:text="${comment.text}"></text>
+    <date th:text="${comment.date}"></date>
+    <time th:text="${comment.time}"></time>
+  </comment>
+</comments>

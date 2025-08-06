@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" th:href="@{/css/homepage.css}">
+  <link rel="stylesheet" th:href="@{/css/modal-post-details.css}">
+  <link rel="stylesheet" th:href="@{/css/modal-add-post.css}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+    <div class="welcome-message">Bentornato, <span id="username" th:text="${loggedUser.username}">User</span>!</div>
+    <a href="#" class="logout-btn" th:href="@{/logout}">
+      Logout
+      <i class='bx bx-log-out'></i>
+    </a>
+  </div>
+
+  <!-- Sezione per invitare l'utente pubblicare un post -->
+  <div class="post-invite">
+    <p>...Vuoi pubblicare qualcosa?</p>
+    <button class="btn-post">Crea nuovo post</button>
+  </div>
+
+  <!-- Sezione per i post -->
+  <h1>Ultimi Post</h1>
+  <div id="posts-container">
+
+  </div>
+  <div class="load-more-section">
+    <button id="loadMoreBtn" class="load-more-button" data-offset="0">Carica altri post</button>
+  </div>
+
+  <div class="modal-overlay"></div>
+
+</div>
+<!-- Bottone flottante -->
+<button class="floating-btn">Aggiungi Post</button>
+
+<div id="notification" class="notification">
+  <span id="notification-message"></span>
+  <button onclick="closeNotification()">&times;</button>
+</div>
+
+<script th:src="@{/js/homepage.js}"></script>
+
+</body>
+</html>
+

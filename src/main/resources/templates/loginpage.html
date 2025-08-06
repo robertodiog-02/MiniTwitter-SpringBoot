@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" th:href="@{/css/loginpage.css}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container">
+  <form th:action="@{/login}" method="post">
+    <h1>Accedi a X</h1>
+    <p>lieti di rivederti qui!</p>
+
+    <div th:if="${param.error}" class="form-notification error">
+      Login fallito, username o password non validi. Riprova.
+    </div>
+
+    <div th:if="${param.logout}" class="form-notification success">
+      Logout effettuato con successo!
+    </div>
+
+    <div class="input-box">
+      <i class='bx bxs-user'></i>
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" id="username" name="username" placeholder="Username" maxlength="30" required>
+
+    </div>
+    <div class="input-box pass">
+      <i class='bx bxs-lock-alt' ></i>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" minlength="8" maxlength="64" required>
+    </div>
+
+    <label>
+      <input type="checkbox" id="show-password" class="show-password" >
+      Mostra password
+    </label>
+
+    <button type="submit" class="btn">Accedi</button>
+
+    <div class="register-link">
+     <p>Non hai ancora un account? <a th:href="@{/register}">Registrati</a></p>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    document.getElementById('show-password').addEventListener('change', function() {
+      const passwordField = document.getElementById('password');
+      if (this.checked) {
+        passwordField.type = 'text';  // Mostra la password
+      } else {
+        passwordField.type = 'password';  // Nasconde la password
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrazione</title>
+  <link rel="stylesheet" th:href="@{/css/registerpage.css}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<div class="container">
+  <form th:action="@{/api/users/create}" method="post">
+    <h1>Registrati a X</h1>
+    <p>per un'esperienza...spaziale!</p>
+    <!-- Contenitore per il messaggio di errore -->
+    <div id="formNotification" class="form-notification" style="display: none;"></div>
+    <div class="input-box">
+      <div class="input-field">
+        <label for="first_name" class="sr-only">Nome</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Nome" minlength="2" maxlength="30" pattern="^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]{1,29}$"
+               title="Il nome deve contenere solo lettere e spazi ma non all'inizio" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-field">
+        <label for="last_name" class="sr-only">Cognome</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Cognome" minlength="2" maxlength="30" pattern="^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]{1,29}$"
+               title="Il nome deve contenere solo lettere e spazi ma non all'inizio" required>
+        <i class='bx bxs-user'></i>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-field">
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" maxlength="64" required>
+        <i class='bx bxs-envelope'></i>
+      </div>
+      <div class="input-field">
+        <label for="numero" class="sr-only">Numero di cellulare</label>
+        <input type="text" id="numero" name="numero" placeholder="Numero di cellulare" pattern="\d{10}" title="Inserisci un numero di telefono valido" maxlength="10" required>
+        <i class='bx bxs-phone'></i>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-box-date">
+        <label for="birthdate" >Data di nascita: </label>
+        <input type="date" id="birthdate" name="birthdate" required>
+      </div>
+      <div class="input-field">
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username" minlength="8" maxlength="30" pattern="^[^\s]{8,30}$"
+               title="Username non può contenere spazi e deve contenere almeno 8 caratteri" required>
+        <i class='bx bxs-user'></i>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-field">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password"  minlength="8" maxlength="64" pattern="^[^\s]{8,64}$"
+        title="La password non deve contenere spazi, minimo 8 caratteri" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="input-field">
+        <label for="confirm_password" class="sr-only">Conferma Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Conferma password"  minlength="8" maxlength="64" pattern="^[^\s]{8,64}$"
+        title="La password non deve contenere spazi, minimo 8 caratteri" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+    </div>
+
+    <label>
+      <input type="checkbox" required>
+      Dichiaro di aver preso visione e di accettare i termini di servizio e l'informativa sulla Privacy, incluso l'utilizzo dei cookie
+    </label>
+
+    <button type="submit" class="btn">Registrati</button>
+
+    <div class="login-link">
+      <p>Hai già un account? <a th:href="@{/login}">Accedi</a></p>
+    </div>
+  </form>
+</div>
+
+<script th:src="@{/js/register.js}"></script>
+
+</body>
+</html>

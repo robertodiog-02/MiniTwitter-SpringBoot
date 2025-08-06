@@ -1,0 +1,142 @@
+
+/* Modifica gli stili solo per la modale con ID creaPostModal */
+#creaPostModal {
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+/* Stile per il bottone di chiusura */
+#creaPostModal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#creaPostModal .close-btn:hover {
+    color: #f4212e; /* Colore rosso al passaggio del mouse */
+}
+
+/* Titolo della modale */
+#creaPostModal h1 {
+    padding: 0;
+    border: none;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Container per le etichette dei campi di input */
+#creaPostModal .label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+/* Stile per le etichette dei campi */
+#creaPostModal .label-container label {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Contenitore per i cerchi del contatore di caratteri */
+#creaPostModal .circle-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+/* Stile per il cerchio di sfondo */
+#creaPostModal .char-counter-circle {
+    transform: rotate(-90deg);
+}
+
+#creaPostModal .circle-bg {
+    fill: none;
+    stroke: #333;
+    stroke-width: 3;
+}
+
+/* Stile per il cerchio di progresso */
+#creaPostModal .circle-progress {
+    fill: none;
+    stroke: #1DA1F2; /* Colore blu per il progresso */
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s;
+}
+
+/* Contatore dei caratteri */
+#creaPostModal .char-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #fff;
+    display: none;
+}
+
+/* Stile per il campo di testo (textarea) */
+#creaPostModal textarea {
+    margin-top: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    min-height: 40px;
+    max-height: 300px;
+    overflow-y: auto;
+    resize: none;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Personalizzazione della scrollbar per i textarea */
+#creaPostModal textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+#creaPostModal textarea::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+#creaPostModal textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Stili per il bottone */
+#creaPostModal button {
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover per il bottone */
+#creaPostModal button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}

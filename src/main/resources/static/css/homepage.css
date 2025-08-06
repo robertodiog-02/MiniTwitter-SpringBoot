@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../images/sfondo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+.container {
+    max-width: 70%;
+    margin: 10px auto;
+    padding: 20px 20px 0;
+    background-color: black;
+    border: 2px solid white;
+    position: relative;
+    left:-50px;
+    box-sizing: border-box;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.welcome-message {
+    color: white;
+    font-size: 30px;
+}
+
+.header i {
+    color: black;
+    margin-left: 4px;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 28px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: grey;
+}
+
+.post-invite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-invite p {
+    font-size: 18px;
+    display: inline;
+    margin: 10px 0;
+    color: #333;
+}
+
+.btn-post {
+    float: right;
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-post:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+h1 {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+    padding-top: 20px;
+    margin-top: 0;
+    border-top: 1px solid white;
+}
+
+.post-preview {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 20px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    text-decoration: none;
+    color: white;
+}
+
+.post-title a:hover {
+    color: #007BFF;
+}
+
+.post-meta {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post-summary {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.post-preview-footer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+.comment-count i {
+    font-size: 20px; /* Adjust as needed */
+    color: white; /* Or your preferred color */
+}
+.read-more {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    /* float: right;*/
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.floating-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.floating-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.load-more-button {
+    display: block;
+    margin: 30px auto;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.load-more-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-button:disabled {
+    background-color: #6c757d; /* Grigio */
+}
+
+@media (max-width: 1189px) {
+
+    .floating-btn {
+        bottom: 10px;
+        left: 50%;  /* Posiziona il bottone al centro della finestra */
+        transform: translateX(-50%);
+        text-align: center;
+        max-width: 200px;
+    }
+    .container {
+        margin: 10px auto 80px auto;
+        left: 0;
+
+    }
+}
+
+@media (max-width: 750px) {
+
+    .container {
+        margin: 0 0 80px;
+        max-width: 100%;
+    }
+    .header .welcome-message {
+        font-size: 24px;
+    }
+
+    .post-invite .btn-post{
+        font-size: 14px;
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px 24px;
+    border-radius: 8px;
+    background-color: #4CAF50; /* Default success color */
+    color: white;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Per l'animazione */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 2px solid white;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+.notification button {
+    background: none;
+    border: 2px solid white;
+    border-radius: 50%; /* bordo in un cerchio */
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.notification button:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+

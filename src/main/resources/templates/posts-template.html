@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<posts xmlns:th="http://www.thymeleaf.org">
+    <post th:each="post : ${posts}" th:attr="id=${post.id}">
+        <title th:text="${post.title}"></title>
+        <author th:text="${post.authorFullName}"></author>
+        <username th:text="${post.authorUsername}"></username>
+        <date th:text="${post.date}"></date>
+        <time th:text="${post.time}"></time>
+        <preview th:text="${post.preview}"></preview>
+        <content th:text="${post.content}"></content>
+        <commentCount th:text="${post.commentCount}"></commentCount>
+    </post>
+</posts>
